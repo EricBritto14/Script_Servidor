@@ -1,0 +1,35 @@
+Python inicia a linha de código que antes estava no BATCH FILE:	
+
+start "SAP_ERP_ETS_BACK" cmd /c "call C:\Projetos\ERP-ETS\full_erp\backend\ERP_BACKEND\.venv\Scripts\activate.bat && python C:/Projetos/ERP-ETS/full_erp/backend/ERP_BACKEND/manage.py runserver 0.0.0.0:8003"
+
+Comando para Salvar o PID (vai aparecer na terceira linha)
+
+for /f "tokens=2" %F in ('tasklist /FI "WindowTitle eq SAP_ERP_ETS_BACK*"') do @echo %~F
+
+Python consome o arquivo TXT e fecha os arquivos
+
+Usar um laço de repetiação pra matar a janela pelo menos 5 vezes...
+
+
+
+
+
+
+
+Outros comandos de procura:
+
+tasklist /v /fo csv | findstr /i "SAP_ERP_ETS_BACK"
+
+tasklist /FI "WindowTitle eq SAP_ERP_ETS_BACK*"
+
+
+
+
+
+
+
+
+
+for /f "tokens=2 delims=," %F in ('tasklist /nh /fi "imagename eq BitTorrent.exe" /fo csv') do @echo %~F
+
+
